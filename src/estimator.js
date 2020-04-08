@@ -5,8 +5,7 @@ const estimateCurrentlyInfected = (data) => {
   const severeImpact = {};
   const impactEstimate = 10;
   const severeImpactEstimate = 50;
-  const bed = (35 / 100) * cases.totalHospitalBeds;
-  const bedSpacePercentDeduction = Math.trunc(bed);
+  const bedSpacePercentDeduction = (35 / 100) * cases.totalHospitalBeds;
 
 
   impact.currentlyInfected = cases.reportedCases * impactEstimate;
@@ -17,12 +16,12 @@ const estimateCurrentlyInfected = (data) => {
     // impact
     impact.infectionsByRequestedTime = impact.currentlyInfected * (2 ** value);
     impact.severeCasesByRequestedTime = Math.trunc((15 / 100) * impact.infectionsByRequestedTime);
-    impact.hospitalBedsByRequestedTime = bedSpacePercentDeduction - impact.severeCasesByRequestedTime;
+    impact.hospitalBedsByRequestedTime = +(bedSpacePercentDeduction - impact.severeCasesByRequestedTime).toFixed(2);
 
     // severeImpact
     severeImpact.infectionsByRequestedTime = severeImpact.currentlyInfected * (2 ** value);
     severeImpact.severeCasesByRequestedTime = Math.trunc((15 / 100) * severeImpact.infectionsByRequestedTime);
-    severeImpact.hospitalBedsByRequestedTime = bedSpacePercentDeduction - severeImpact.severeCasesByRequestedTime;
+    severeImpact.hospitalBedsByRequestedTime = +(bedSpacePercentDeduction - severeImpact.severeCasesByRequestedTime).toFixed(2);
   }
 
   if (cases.periodType === 'weeks') {
@@ -31,12 +30,12 @@ const estimateCurrentlyInfected = (data) => {
     // impact
     impact.infectionsByRequestedTime = impact.currentlyInfected * (2 ** value);
     impact.severeCasesByRequestedTime = Math.trunc((15 / 100) * impact.infectionsByRequestedTime);
-    impact.hospitalBedsByRequestedTime = bedSpacePercentDeduction - impact.severeCasesByRequestedTime;
+    impact.hospitalBedsByRequestedTime = +(bedSpacePercentDeduction - impact.severeCasesByRequestedTime).toFixed(2);
 
     // severeImpact
     severeImpact.infectionsByRequestedTime = severeImpact.currentlyInfected * (2 ** value);
     severeImpact.severeCasesByRequestedTime = Math.trunc((15 / 100) * severeImpact.infectionsByRequestedTime);
-    severeImpact.hospitalBedsByRequestedTime = bedSpacePercentDeduction - severeImpact.severeCasesByRequestedTime;
+    severeImpact.hospitalBedsByRequestedTime = +(bedSpacePercentDeduction - severeImpact.severeCasesByRequestedTime).toFixed(2);
   }
 
   if (cases.periodType === 'months') {
@@ -45,12 +44,12 @@ const estimateCurrentlyInfected = (data) => {
     // impact
     impact.infectionsByRequestedTime = impact.currentlyInfected * (2 ** value);
     impact.severeCasesByRequestedTime = Math.trunc((15 / 100) * impact.infectionsByRequestedTime);
-    impact.hospitalBedsByRequestedTime = bedSpacePercentDeduction - impact.severeCasesByRequestedTime;
+    impact.hospitalBedsByRequestedTime = +(bedSpacePercentDeduction - impact.severeCasesByRequestedTime).toFixed(2);
 
     // severeImpact
     severeImpact.infectionsByRequestedTime = severeImpact.currentlyInfected * (2 ** value);
     severeImpact.severeCasesByRequestedTime = Math.trunc((15 / 100) * severeImpact.infectionsByRequestedTime);
-    severeImpact.hospitalBedsByRequestedTime = bedSpacePercentDeduction - severeImpact.severeCasesByRequestedTime;
+    severeImpact.hospitalBedsByRequestedTime = +(bedSpacePercentDeduction - severeImpact.severeCasesByRequestedTime).toFixed(2);
   }
 
 
