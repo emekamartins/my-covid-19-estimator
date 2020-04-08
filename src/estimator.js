@@ -39,7 +39,7 @@ const estimateCurrentlyInfected = (data) => {
     impact.hospitalBedsByRequestedTime = +(bedSpacePercentDeduction - impact.severeCasesByRequestedTime).toFixed(2);
     impact.casesForICUByRequestedTime = Math.trunc((5 / 100) * impact.infectionsByRequestedTime);
     impact.casesForVentilatorsByRequestedTime = Math.trunc((2 / 100) * impact.infectionsByRequestedTime);
-    impact.dollarsInFlight = (impact.infectionsByRequestedTime * cases.region.avgDailyIncomePopulation) * cases.region.avgDailyIncomeInUSD * (cases.timeToElapse * 7);
+    impact.dollarsInFlight = (impact.infectionsByRequestedTime * cases.region.avgDailyIncomePopulation) * cases.region.avgDailyIncomeInUSD * cases.timeToElapse * 7;
 
     // severeImpact
     severeImpact.infectionsByRequestedTime = severeImpact.currentlyInfected * (2 ** value);
@@ -47,7 +47,7 @@ const estimateCurrentlyInfected = (data) => {
     severeImpact.hospitalBedsByRequestedTime = +(bedSpacePercentDeduction - severeImpact.severeCasesByRequestedTime).toFixed(2);
     severeImpact.casesForICUByRequestedTime = Math.trunc((5 / 100) * severeImpact.infectionsByRequestedTime);
     severeImpact.casesForVentilatorsByRequestedTime = Math.trunc((2 / 100) * severeImpact.infectionsByRequestedTime);
-    severeImpact.dollarsInFlight = (severeImpact.infectionsByRequestedTime * cases.region.avgDailyIncomePopulation) * cases.region.avgDailyIncomeInUSD * (cases.timeToElapse * 7);
+    severeImpact.dollarsInFlight = (severeImpact.infectionsByRequestedTime * cases.region.avgDailyIncomePopulation) * cases.region.avgDailyIncomeInUSD * cases.timeToElapse * 7;
   }
 
   if (cases.periodType === 'months') {
@@ -59,7 +59,7 @@ const estimateCurrentlyInfected = (data) => {
     impact.hospitalBedsByRequestedTime = +(bedSpacePercentDeduction - impact.severeCasesByRequestedTime).toFixed(2);
     impact.casesForICUByRequestedTime = Math.trunc((5 / 100) * impact.infectionsByRequestedTime);
     impact.casesForVentilatorsByRequestedTime = Math.trunc((2 / 100) * impact.infectionsByRequestedTime);
-    impact.dollarsInFlight = (impact.infectionsByRequestedTime * cases.region.avgDailyIncomePopulation) * cases.region.avgDailyIncomeInUSD * (cases.timeToElapse * 30);
+    impact.dollarsInFlight = (impact.infectionsByRequestedTime * cases.region.avgDailyIncomePopulation) * cases.region.avgDailyIncomeInUSD * cases.timeToElapse * 30;
 
     // severeImpact
     severeImpact.infectionsByRequestedTime = severeImpact.currentlyInfected * (2 ** value);
@@ -67,7 +67,7 @@ const estimateCurrentlyInfected = (data) => {
     severeImpact.hospitalBedsByRequestedTime = +(bedSpacePercentDeduction - severeImpact.severeCasesByRequestedTime).toFixed(2);
     severeImpact.casesForICUByRequestedTime = Math.trunc((5 / 100) * severeImpact.infectionsByRequestedTime);
     severeImpact.casesForVentilatorsByRequestedTime = Math.trunc((2 / 100) * severeImpact.infectionsByRequestedTime);
-    severeImpact.dollarsInFlight = (severeImpact.infectionsByRequestedTime * cases.region.avgDailyIncomePopulation) * cases.region.avgDailyIncomeInUSD * (cases.timeToElapse * 30);
+    severeImpact.dollarsInFlight = (severeImpact.infectionsByRequestedTime * cases.region.avgDailyIncomePopulation) * cases.region.avgDailyIncomeInUSD * cases.timeToElapse * 30;
   }
 
 
