@@ -20,7 +20,7 @@ const estimateCurrentlyInfected = (data) => {
     impact.hospitalBedsByRequestedTime = Math.trunc(impactBed);
     impact.casesForICUByRequestedTime = Math.trunc((5 / 100) * impact.infectionsByRequestedTime);
     impact.casesForVentilatorsByRequestedTime = Math.trunc((2 / 100) * impact.infectionsByRequestedTime);
-    const impactOnEconomy = impact.infectionsByRequestedTime * cases.region.avgDailyIncomePopulation * cases.region.avgDailyIncomeInUSD * cases.timeToElapse;
+    const impactOnEconomy = impact.infectionsByRequestedTime * cases.region.avgDailyIncomePopulation * cases.region.avgDailyIncomeInUSD * 30;
     impact.dollarsInFlight = +impactOnEconomy.toFixed(2);
 
     // severeImpact
@@ -30,7 +30,7 @@ const estimateCurrentlyInfected = (data) => {
     severeImpact.hospitalBedsByRequestedTime = Math.trunc(severeBed);
     severeImpact.casesForICUByRequestedTime = Math.trunc((5 / 100) * severeImpact.infectionsByRequestedTime);
     severeImpact.casesForVentilatorsByRequestedTime = Math.trunc((2 / 100) * severeImpact.infectionsByRequestedTime);
-    const severeImpactOnEconomy = severeImpact.infectionsByRequestedTime * cases.region.avgDailyIncomePopulation * cases.region.avgDailyIncomeInUSD * cases.timeToElapse;
+    const severeImpactOnEconomy = severeImpact.infectionsByRequestedTime * cases.region.avgDailyIncomePopulation * cases.region.avgDailyIncomeInUSD * 30;
     severeImpact.dollarsInFlight = +severeImpactOnEconomy.toFixed(2);
   }
 
@@ -45,7 +45,7 @@ const estimateCurrentlyInfected = (data) => {
     impact.hospitalBedsByRequestedTime = Math.trunc(impactBed);
     impact.casesForICUByRequestedTime = Math.trunc((5 / 100) * impact.infectionsByRequestedTime);
     impact.casesForVentilatorsByRequestedTime = Math.trunc((2 / 100) * impact.infectionsByRequestedTime);
-    const impactOnEconomy = impact.infectionsByRequestedTime * cases.region.avgDailyIncomePopulation * cases.region.avgDailyIncomeInUSD * totalTimeElapse;
+    const impactOnEconomy = impact.infectionsByRequestedTime * cases.region.avgDailyIncomePopulation * cases.region.avgDailyIncomeInUSD * 30;
     impact.dollarsInFlight = +impactOnEconomy.toFixed(2);
 
     // severeImpact
@@ -55,7 +55,7 @@ const estimateCurrentlyInfected = (data) => {
     severeImpact.hospitalBedsByRequestedTime = Math.trunc(severeBed);
     severeImpact.casesForICUByRequestedTime = Math.trunc((5 / 100) * severeImpact.infectionsByRequestedTime);
     severeImpact.casesForVentilatorsByRequestedTime = Math.trunc((2 / 100) * severeImpact.infectionsByRequestedTime);
-    const severeImpactOnEconomy = severeImpact.infectionsByRequestedTime * cases.region.avgDailyIncomePopulation * cases.region.avgDailyIncomeInUSD * totalTimeElapse;
+    const severeImpactOnEconomy = severeImpact.infectionsByRequestedTime * cases.region.avgDailyIncomePopulation * cases.region.avgDailyIncomeInUSD * 30;
     severeImpact.dollarsInFlight = +severeImpactOnEconomy.toFixed(2);
   }
 
@@ -69,7 +69,7 @@ const estimateCurrentlyInfected = (data) => {
     impact.hospitalBedsByRequestedTime = Math.trunc(impactBed);
     impact.casesForICUByRequestedTime = Math.trunc((5 / 100) * impact.infectionsByRequestedTime);
     impact.casesForVentilatorsByRequestedTime = Math.trunc((2 / 100) * impact.infectionsByRequestedTime);
-    const impactOnEconomy = impact.infectionsByRequestedTime * cases.region.avgDailyIncomePopulation * cases.region.avgDailyIncomeInUSD * totalTimeElapse;
+    const impactOnEconomy = impact.infectionsByRequestedTime * cases.region.avgDailyIncomePopulation * cases.region.avgDailyIncomeInUSD * 30;
     impact.dollarsInFlight = +impactOnEconomy.toFixed(2);
 
     // severeImpact
@@ -79,7 +79,7 @@ const estimateCurrentlyInfected = (data) => {
     severeImpact.hospitalBedsByRequestedTime = Math.trunc(severeBed);
     severeImpact.casesForICUByRequestedTime = Math.trunc((5 / 100) * severeImpact.infectionsByRequestedTime);
     severeImpact.casesForVentilatorsByRequestedTime = Math.trunc((2 / 100) * severeImpact.infectionsByRequestedTime);
-    const severeImpactOnEconomy = severeImpact.infectionsByRequestedTime * cases.region.avgDailyIncomePopulation * cases.region.avgDailyIncomeInUSD * totalTimeElapse;
+    const severeImpactOnEconomy = severeImpact.infectionsByRequestedTime * cases.region.avgDailyIncomePopulation * cases.region.avgDailyIncomeInUSD * 30;
     severeImpact.dollarsInFlight = +severeImpactOnEconomy.toFixed(2);
   }
 
